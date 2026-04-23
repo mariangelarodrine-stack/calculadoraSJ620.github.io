@@ -11,12 +11,25 @@
       transition: all 0.3s ease;
     }
 
-    /* ✨ TÍTULO MEJORADO */
     h1 {
       text-align: center;
       margin-bottom: 20px;
       font-style: italic;
       font-family: "Segoe UI", "Georgia", serif;
+    }
+
+    /* 🔥 BANNER */
+    .banner {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .banner img {
+      width: 756px;   /* ≈ 20cm */
+      height: 567px;  /* ≈ 15cm */
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     .container {
@@ -112,41 +125,25 @@
       font-size: 14px;
     }
 
-    /* 🔥 MODO PRESENTACIÓN */
-    .presentacion h1 {
-      font-size: 32px;
-    }
+    .presentacion h1 { font-size: 32px; }
+    .presentacion table { width: 400px; font-size: 18px; }
+    .presentacion th { font-size: 20px; }
+    .presentacion .ganancia { font-size: 28px; width: 420px; }
+    .presentacion .boton { font-size: 18px; padding: 12px; }
+    .presentacion input { font-size: 18px; padding: 10px; }
 
-    .presentacion table {
-      width: 400px;
-      font-size: 18px;
-    }
-
-    .presentacion th {
-      font-size: 20px;
-    }
-
-    .presentacion .ganancia {
-      font-size: 28px;
-      width: 420px;
-    }
-
-    .presentacion .boton {
-      font-size: 18px;
-      padding: 12px;
-    }
-
-    .presentacion input {
-      font-size: 18px;
-      padding: 10px;
-    }
   </style>
 </head>
+
 <body id="body">
+
+  <!-- 🔥 IMAGEN SUPERIOR CORREGIDA -->
+  <div class="banner">
+    <img src="Imagen4.jpg" alt="San Juan">
+  </div>
 
   <button class="toggle" onclick="toggleModo()">Modo Presentación</button>
 
-  <!-- ✨ TÍTULO FINAL -->
   <h1>Simula tu ganancia: compra hoy y vende al nuevo precio</h1>
 
   <div style="text-align:center; margin-bottom:20px;">
@@ -207,7 +204,6 @@
       document.getElementById('totalCompra').innerText = 'S/ ' + formatoMoneda(totalCompra);
       document.getElementById('totalVenta').innerText = 'S/ ' + formatoMoneda(totalVenta);
       document.getElementById('ganancia').innerText = '💰 Ganancia Total: S/ ' + formatoMoneda(ganancia);
-
       document.getElementById('gananciaCaja').innerText = '💰 Ganancia/Caja: S/ ' + formatoMoneda(gananciaPorCaja);
 
       let rentabilidadText = document.getElementById('rentabilidad');
