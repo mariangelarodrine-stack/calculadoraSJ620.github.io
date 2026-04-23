@@ -36,7 +36,8 @@
       border-radius: 14px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
       overflow: hidden;
-      width: 300px;
+      min-width: 280px;
+      width: 300px; /* 🔥 mismo ancho para todas */
       font-size: 14px;
     }
 
@@ -58,18 +59,18 @@
     }
 
     .resaltado {
-      background: #fff200;
-      font-weight: bold;
+      background: #fff3a0;
+      font-weight: 600;
     }
 
     .fuerte {
-      background: #ffe600;
+      background: #f7dc3c;
       font-weight: bold;
     }
 
     .verde {
-      background: #b9e4c9;
-      font-weight: bold;
+      background: #c8e6c9;
+      font-weight: 600;
     }
 
     /* CALCULADORA */
@@ -135,6 +136,7 @@
 
 <body>
 
+<!-- 🔥 TABLAS -->
 <div class="tabla-resumen">
 
   <h2>Resumen Compra y Venta - San Juan 620</h2>
@@ -144,66 +146,41 @@
     <!-- COMPRA -->
     <table class="tabla-box">
       <tr><th colspan="4">Compra</th></tr>
-      <tr>
-        <td><b>Bodeguero</b></td>
-        <td><b>Precio Botella</b></td>
-        <td><b>Cantidad botellas</b></td>
-        <td><b>Precio Caja</b></td>
-      </tr>
-      <tr>
-        <td><b>Hoy</b></td>
-        <td>S/ 5.19</td>
-        <td>12</td>
-        <td><b>S/ 62.30</b></td>
-      </tr>
-      <tr>
-        <td><b>Voceo Abril</b></td>
-        <td>S/ 5.19</td>
-        <td>12</td>
-        <td><b>S/ 62.30</b></td>
-      </tr>
+      <tr><td><b>Mes</b></td><td><b>Precio</b></td><td><b>Cantidad</b></td><td><b>Total</b></td></tr>
+      <tr><td>Hoy</td><td>S/ 5.19</td><td>12</td><td>S/ 62.30</td></tr>
+      <tr><td>Beneficio de Voceo</td><td>S/ 5.19</td><td>12</td><td>S/ 62.30</td></tr>
     </table>
 
     <!-- VENTA -->
     <table class="tabla-box">
       <tr><th colspan="4">Venta</th></tr>
-      <tr>
-        <td><b>Consumidor</b></td>
-        <td><b>Precio Botella</b></td>
-        <td><b>Cantidad botellas</b></td>
-        <td><b>Precio Caja</b></td>
-      </tr>
-      <tr>
-        <td><b>Hoy</b></td>
-        <td class="resaltado">S/ 6.00</td>
-        <td>12</td>
-        <td><b>S/ 72.00</b></td>
-      </tr>
-      <tr>
-        <td><b>Mayo</b></td>
-        <td class="resaltado">S/ 6.50</td>
-        <td>12</td>
-        <td><b>S/ 78.00</b></td>
-      </tr>
+      <tr><td><b>Mes</b></td><td><b>Precio</b></td><td><b>Cantidad</b></td><td><b>Total</b></td></tr>
+      <tr><td>Hoy</td><td class="resaltado">S/ 6.00</td><td>12</td><td>S/ 72.00</td></tr>
+      <tr><td>Venta</td><td>S/ 6.50</td><td>12</td><td>S/ 78.00</td></tr>
     </table>
 
-    <!-- GANANCIA -->
+    <!-- 🔥 GANANCIA (AHORA ALINEADA) -->
     <table class="tabla-box">
-      <tr><th colspan="2">Ganancia por Caja</th></tr>
+      <tr><th colspan="4">Ganancia por Caja</th></tr>
 
       <tr>
-        <td><b>Hoy</b></td>
-        <td>S/ 9.70</td>
+        <td><b>Mes</b></td>
+        <td colspan="3"><b>Monto</b></td>
       </tr>
 
       <tr>
-        <td><b>Mayo</b></td>
-        <td class="fuerte">💰 S/ 15.70</td>
+        <td>Hoy</td>
+        <td colspan="3">S/ 9.70</td>
       </tr>
 
       <tr>
-        <td><b>Beneficio Voceo</b></td>
-        <td class="verde">S/ 6.00</td>
+        <td>Mayo</td>
+        <td colspan="3" class="fuerte">💰 S/ 15.70</td>
+      </tr>
+
+      <tr>
+        <td>Beneficio de Voceo</td>
+        <td colspan="3" class="verde">S/ 6.00</td>
       </tr>
 
     </table>
@@ -211,13 +188,13 @@
   </div>
 </div>
 
-<!-- CALCULADORA -->
+<!-- 🔥 CALCULADORA -->
 <h1>💰 Simula tu ganancia</h1>
 
 <div style="text-align:center; margin: 25px 0;">
-  <label><strong>📦 Cajas</strong></label><br><br>
+  <label style="display:block; margin-bottom:8px; font-weight:bold;">📦 Cajas</label>
   <input type="number" id="cajas" oninput="calcular()" 
-         style="padding:10px; width:140px; text-align:center; border-radius:8px;">
+         style="padding:10px; width:140px; text-align:center; border-radius:8px; border:1px solid #ccc;">
 </div>
 
 <div class="container">
