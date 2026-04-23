@@ -11,25 +11,12 @@
       transition: all 0.3s ease;
     }
 
+    /* ✨ TÍTULO MEJORADO */
     h1 {
       text-align: center;
       margin-bottom: 20px;
       font-style: italic;
       font-family: "Segoe UI", "Georgia", serif;
-    }
-
-    /* 🔥 BANNER */
-    .banner {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .banner img {
-      width: 756px;   /* 20 cm */
-      height: 567px;  /* 15 cm */
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     .container {
@@ -46,6 +33,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border-radius: 12px;
       overflow: hidden;
+      transition: all 0.3s ease;
     }
 
     th {
@@ -53,6 +41,7 @@
       color: white;
       padding: 12px;
       text-align: center;
+      font-size: 16px;
     }
 
     td {
@@ -70,6 +59,7 @@
       background-color: #ffe082;
       font-weight: bold;
       text-align: center;
+      font-size: 16px;
     }
 
     .ganancia {
@@ -83,6 +73,8 @@
       width: 320px;
       margin-left: auto;
       margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
 
     .botones {
@@ -97,8 +89,15 @@
       color: #333;
       padding: 8px 12px;
       border-radius: 8px;
+      font-size: 14px;
+      text-align: center;
       min-width: 160px;
       border: 1px solid #d0d0d0;
+      transition: all 0.2s ease;
+    }
+
+    .boton:hover {
+      background-color: #d6d6d6;
     }
 
     .toggle {
@@ -110,32 +109,49 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-size: 14px;
     }
 
     /* 🔥 MODO PRESENTACIÓN */
-    .presentacion h1 { font-size: 32px; }
-    .presentacion table { width: 400px; font-size: 18px; }
-    .presentacion .ganancia { font-size: 28px; width: 420px; }
-    .presentacion .boton { font-size: 18px; padding: 12px; }
-    .presentacion input { font-size: 18px; padding: 10px; }
+    .presentacion h1 {
+      font-size: 32px;
+    }
 
+    .presentacion table {
+      width: 400px;
+      font-size: 18px;
+    }
+
+    .presentacion th {
+      font-size: 20px;
+    }
+
+    .presentacion .ganancia {
+      font-size: 28px;
+      width: 420px;
+    }
+
+    .presentacion .boton {
+      font-size: 18px;
+      padding: 12px;
+    }
+
+    .presentacion input {
+      font-size: 18px;
+      padding: 10px;
+    }
   </style>
 </head>
-
 <body id="body">
-
-  <!-- 🔥 IMAGEN SUPERIOR -->
-  <div class="banner">
-    <img src="imagen4.jpg" alt="San Juan">
-  </div>
 
   <button class="toggle" onclick="toggleModo()">Modo Presentación</button>
 
+  <!-- ✨ TÍTULO FINAL -->
   <h1>Simula tu ganancia: compra hoy y vende al nuevo precio</h1>
 
   <div style="text-align:center; margin-bottom:20px;">
     <label><strong>Ingresa Cajas:</strong></label>
-    <input type="number" id="cajas" oninput="calcular()">
+    <input type="number" id="cajas" oninput="calcular()" style="width:150px; margin-left:10px;">
   </div>
 
   <div class="container">
@@ -191,6 +207,7 @@
       document.getElementById('totalCompra').innerText = 'S/ ' + formatoMoneda(totalCompra);
       document.getElementById('totalVenta').innerText = 'S/ ' + formatoMoneda(totalVenta);
       document.getElementById('ganancia').innerText = '💰 Ganancia Total: S/ ' + formatoMoneda(ganancia);
+
       document.getElementById('gananciaCaja').innerText = '💰 Ganancia/Caja: S/ ' + formatoMoneda(gananciaPorCaja);
 
       let rentabilidadText = document.getElementById('rentabilidad');
